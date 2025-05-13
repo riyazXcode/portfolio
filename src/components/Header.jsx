@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import Logo from 'url:../assets/icons/Logo.svg';
 import {Link} from "react-router";
 import {Menu, X} from "lucide-react";
 import LetsConnectBtn from "./LetsConnectBtn";
+import PortfolioLogo from "./PortfolioLogo";
 
 const Nav = () => {
     return (
-        <div className="flex items-center lg:order-2 xl:justify-between">
+        <div className="flex items-start xl:justify-between">
             <Link to="#about"
                   className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">About
                 Me</Link>
@@ -33,19 +33,15 @@ const Header = () => {
 
     return (
             <header className="bg-white px-4 lg:px-6 py-4 shadow-2xl sticky items-center mx-auto max-w-screen-x">
-                <div className="hidden md:flex justify-between">
-                    <a>
-                        <img className="mr-3 h-6 sm:h-10" src={Logo} alt="website logo"/>
-                    </a>
+                <div className="hidden md:flex justify-between ">
+                    <PortfolioLogo/>
                     <Nav/>
                 </div>
                 <div className="md:hidden fle justify-between flex-wrap">
                     <div className="flex justify-between">
                         {
                             !isOpen && (<div>
-                                <a>
-                                    <img className="mr-3 h-6" src={Logo} alt="website logo"/>
-                                </a>
+                                <PortfolioLogo/>
                             </div>)
                         }
                         <div  onClick={toggleNavbar}>
