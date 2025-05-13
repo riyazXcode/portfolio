@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import LetsConnectBtn from "./LetsConnectBtn";
 import ResumeBtn from "./ResumeBtn";
 import GitHubSocialMediaLogo from "url:../assets/socials/github.svg";
@@ -9,8 +9,26 @@ import { Link } from "react-router";
 const Photo = new URL('../assets/photo/photo.png', import.meta.url);
 
 const Hero = () => {
+    const imgRef = useRef(null);
+
+    const handleMouseMove = (e) => {
+        const img = imgRef.current;
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 40;
+        const y = e.clientY - rect.top - rect.height / 40;
+
+        const rotateX = (-y / 30).toFixed(1);
+        const rotateY = (x / 30).toFixed(1);
+
+        img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    };
+
+    const handleMouseLeave = () => {
+        imgRef.current.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    };
+
     return (
-        <div className="flex flex-col items-center w-full px-4">
+        <div className="flex flex-col items-center w-full px-4 z-40">
             <div className="flex flex-col lg:flex-row justify-between  items-center w-full max-w-7xl mt-25">
                 <div className="flex flex-col gap-3 text-center lg:text-left lg:w-1/2">
                     <h1 className="text-2xl font-light">Hello There!</h1>
@@ -23,11 +41,14 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="mt-10 lg:mt-0">
+                <div className="mt-10 lg:mt-0 z-40"
+                     onMouseMove={handleMouseMove}
+                     onMouseLeave={handleMouseLeave}>
                     <img
-                        className="mx-auto lg:mr-20 h-48 sm:h-60 lg:h-95 drop-shadow-2xl rounded-full"
+                        className="transition-transform duration-400 ease-out mx-auto lg:mr-20 h-48 sm:h-60 lg:h-95 drop-shadow-2xl rounded-full"
                         src={Photo}
                         alt="photo"
+                        ref={imgRef}
                     />
                 </div>
             </div>

@@ -10,7 +10,7 @@ const Nav = () => {
             <Link to="#about"
                   className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">About
                 Me</Link>
-            <Link to="#skills"
+            <Link to="#skillsid"
                   className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Skills
                 & Experience</Link>
             <Link to="#works"
@@ -32,7 +32,7 @@ const Header = () => {
     }
 
     return (
-            <header className="bg-white px-4 lg:px-6 py-4 shadow-2xl sticky items-center mx-auto max-w-screen-x">
+            <header className="bg-white px-4 lg:px-6 py-4 shadow-2xl items-center mx-auto max-w-screen-x z-50">
                 <div className="hidden md:flex justify-between ">
                     <PortfolioLogo/>
                     <Nav/>
