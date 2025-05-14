@@ -8,15 +8,16 @@ const Nav = () => {
     return (
         <div className="flex items-start xl:justify-between">
             <Link to="#about"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">About
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">About
                 Me</Link>
             <Link to="#skillsid"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Skills
-                & Experience</Link>
-            <Link to="#works"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Works</Link>
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Skills</Link>
+            <Link to="#Services"
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Services</Link>
+            <Link to="#Projects"
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Projects</Link>
             <Link to="#articles"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Articles</Link>
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Contributions</Link>
             <LetsConnectBtn/>
         </div>
     )
@@ -50,9 +51,10 @@ const Header = () => {
                         {isOpen && (
                             <div className="flex flex-col items-center basis-full">
                                 <Link to="#about" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>About Me</Link>
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Skills & Experience</Link>
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Works</Link>
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Articles</Link>
+                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Skills</Link>
+                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Services</Link>
+                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Projects</Link>
+                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Contributions</Link>
                             </div>
 
                         )}
