@@ -4,7 +4,10 @@ import ResumeBtn from "./ResumeBtn";
 import GitHubSocialMediaLogo from "url:../assets/socials/github.svg";
 import InstagramSocialMediaLogo from "url:../assets/socials/instagram.svg";
 import XSocialMediaLogo from "url:../assets/socials/x.svg";
+import LinkedInSocialMediaLogo from "url:../assets/socials/linkedin.svg";
 import { Link } from "react-router";
+import LINKS from "../assets/links";
+
 
 const Photo = new URL('../assets/photo/photo.png', import.meta.url);
 
@@ -28,7 +31,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="flex flex-col items-center w-full px-4 z-40 md:mt-20 ">
+        <div className="flex flex-col items-center w-full px-4 z-40 md:mt-20" id='aboutid'>
             <div className="flex flex-col lg:flex-row justify-between  items-center w-full max-w-7xl mt-25">
                 <div className="flex flex-col gap-3 text-center lg:text-left lg:w-1/2">
                     <h1 className="text-2xl font-light">Hello There!</h1>
@@ -62,16 +65,19 @@ const Hero = () => {
             </div>
 
             <div className="mt-10 flex flex-col items-center gap-3">
-                <h1 className="text-lg sm:text-xl text-[#7F7F7F]">Follow me at my Socials</h1>
+                <h1 className="text-lg sm:text-xl text-[#7F7F7F]">Let’s chat! Follow me on my socials</h1>
                 <div className="flex gap-6 items-center">
-                    <Link to="#" className="hover:opacity-50 duration-300">
+                    <Link to={LINKS.twitterLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-50 duration-300">
                         <img className="h-6 sm:h-8" src={XSocialMediaLogo} alt="X logo" />
                     </Link>
-                    <Link to="#" className="hover:opacity-50 duration-300">
-                        <img className="h-6 sm:h-10" src={InstagramSocialMediaLogo} alt="Instagram logo" />
+                    <Link to={LINKS.instagramLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-50 duration-300">
+                        <img className="h-8 sm:h-10" src={InstagramSocialMediaLogo} alt="Instagram logo" />
                     </Link>
-                    <Link to="#" className="hover:opacity-50 duration-300">
+                    <Link to={LINKS.githubLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-50 duration-300">
                         <img className="h-6 sm:h-8" src={GitHubSocialMediaLogo} alt="GitHub logo" />
+                    </Link>
+                    <Link to={LINKS.linkedinLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-50 duration-300">
+                        <img className="h-8 sm:h-10" src={LinkedInSocialMediaLogo} alt="LinkedIn logo" />
                     </Link>
                 </div>
             </div>

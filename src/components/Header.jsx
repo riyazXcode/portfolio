@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router";
+import { Link } from 'react-scroll';
 import {Menu, X} from "lucide-react";
 import LetsConnectBtn from "./LetsConnectBtn";
 import PortfolioLogo from "./PortfolioLogo";
@@ -7,16 +7,31 @@ import PortfolioLogo from "./PortfolioLogo";
 const Nav = () => {
     return (
         <div className="flex items-start xl:justify-between">
-            <Link to="#skillsid"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Skills</Link>
-            <Link to="#Services"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Services</Link>
-            <Link to="#Projects"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Projects</Link>
-            <Link to="#articles"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Contributions</Link>
-            <Link to="#articles"
-                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100">Certifications</Link>
+            <Link to="skillsid"
+                  smooth={true}
+                  duration={500}
+                  offset={0}
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100 cursor-pointer">Skills</Link>
+            <Link to="servicesid"
+                  smooth={true}
+                  duration={500}
+                  offset={-30}
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100 cursor-pointer">Services</Link>
+            <Link to="projectsid"
+                  smooth={true}
+                  duration={500}
+                  offset={-30}
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100 cursor-pointer">Projects</Link>
+            {/*<Link to="contributionsid"*/}
+            {/*      smooth={true}*/}
+            {/*      duration={500}*/}
+            {/*      offset={-30}*/}
+            {/*      className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100 cursor-pointer">Contributions</Link>*/}
+            <Link to="certificationsid"
+                  smooth={true}
+                  duration={500}
+                  offset={-30}
+                  className="text-gray-800 duration-300 ease-in-out rounded-lg text-lg px-2 lg:px-8 py-2 lg:py-2.5 mr-2 opacity-50 hover:opacity-100 cursor-pointer">Certifications</Link>
             <LetsConnectBtn/>
         </div>
     )
@@ -63,16 +78,31 @@ const Header = () => {
                                 <PortfolioLogo/>
                             </div>)
                         }
-                        <div  onClick={toggleNavbar}>
-                            {isOpen ? <Link to="#"><X/></Link> : <Link to="#"><Menu/></Link>}
+                        <div  onClick={toggleNavbar} >
+                            {isOpen ? <a className="cursor-pointer"><X/></a> : <a><Menu className="cursor-pointer"/></a>}
                         </div>
                         {isOpen && (
                             <div className="flex flex-col items-center basis-full">
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Skills</Link>
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Services</Link>
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Projects</Link>
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Contributions</Link>
-                                <Link to="#skills" className="opacity-50 hover:opacity-100 duration-300" onClick={toggleNavbar}>Certifications</Link>
+                                <Link to="skillsid"
+                                      smooth={true}
+                                      duration={500}
+                                      offset={0} className="opacity-50 hover:opacity-100 duration-300 cursor-pointer" onClick={toggleNavbar}>Skills</Link>
+                                <Link to="servicesid"
+                                      smooth={true}
+                                      duration={500}
+                                      offset={-30} className="opacity-50 hover:opacity-100 duration-300 cursor-pointer" onClick={toggleNavbar}>Services</Link>
+                                <Link to="projectsid"
+                                      smooth={true}
+                                      duration={500}
+                                      offset={-30} className="opacity-50 hover:opacity-100 duration-300 cursor-pointer" onClick={toggleNavbar}>Projects</Link>
+                                {/*<Link to="contributionsid"*/}
+                                {/*      smooth={true}*/}
+                                {/*      duration={500}*/}
+                                {/*      offset={-30} className="opacity-50 hover:opacity-100 duration-300 cursor-pointer" onClick={toggleNavbar}>Contributions</Link>*/}
+                                <Link to="certificationsid"
+                                      smooth={true}
+                                      duration={500}
+                                      offset={-30} className="opacity-50 hover:opacity-100 duration-300 cursor-pointer" onClick={toggleNavbar}>Certifications</Link>
                             </div>
 
                         )}

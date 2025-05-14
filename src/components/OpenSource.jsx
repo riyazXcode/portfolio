@@ -29,8 +29,8 @@ const contributions = [
 
 const OpenSource = () => {
     return (
-        <section className="pb-16 px-6 bg-white text-gray-800">
-            <h2 className="text-4xl font-bold text-center text-blue-600 mb-10">
+        <section className="pb-16 px-6 bg-white text-gray-800" id='contributionsid'>
+            <h2 className="text-4xl font-bold text-center text-blue-600 mb-10" >
                 Open Source Contributions
             </h2>
 
@@ -40,13 +40,13 @@ const OpenSource = () => {
                         key={index}
                         className="border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition"
                     >
-                        <h3 className="text-lg font-semibold mb-1">{item.project}</h3>
-                        <p className="text-sm text-gray-700 mb-2">{item.description}</p>
+                        <h3 className="text-2xl font-semibold mb-1">{item.project}</h3>
+                        <p className="text-lg text-gray-700 mb-2">{item.description}</p>
                         <a
                             href={item.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-500 text-sm hover:underline"
+                            className="text-blue-700 text-md hover:text-gray-600 duration-300 ease-in-out"
                         >
                             View on GitHub →
                         </a>

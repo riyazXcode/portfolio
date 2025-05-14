@@ -1,10 +1,12 @@
 import React from "react";
 import GestoCraft from "url:../assets/photo/gestocraftimg.png";
-import Symplora from "url:../assets/photo/Symploraimg.jpeg"
+import Symplora from "url:../assets/photo/Symploraimg.jpeg";
+import LINKS from '../assets/links';
+
 const projects = [
     {
         title: "Symplora - A Full-Scale Event Management Platform",
-        codeLink: "#",
+        codeLink: LINKS.symploraLink,
         demoLink: "#",
         features: [
             "Full-stack web app for college symposiums.",
@@ -17,8 +19,8 @@ const projects = [
     },
     {
         title: "GestoCraft - Gesture Controlled Surgical Robotic Arm",
-        codeLink: "#",
-        demoLink: "#",
+        codeLink: "",
+        demoLink: LINKS.gestocraftDemo,
         features: [
             "Built a surgical robotic arm which utilizes 21-keypoint hand-gesture model with TensorFlow.js, achieving 95% gesture-recognition accuracy in tests.",
             "Integrated Johnny-Five for real-time servo control, reducing latency to under 100 ms.",
@@ -32,7 +34,7 @@ const projects = [
 
 const Projects = () => {
     return (
-        <section className="pb-16 px-6 bg-white text-gray-800">
+        <section className="pb-16 px-6 bg-white text-gray-800" id='projectsid'>
             <h2 className="font-bold text-center mb-10 text-3xl sm:text-4xl text-[#1465FF]">
                 Projects
             </h2>
@@ -69,7 +71,7 @@ const Projects = () => {
                                 </a>
                             </div>
 
-                            <ul className="list-disc ml-5 text-md text-gray-700 space-y-1 mb-3">
+                            <ul className="list-disc ml-5 text-lg text-gray-700 space-y-1 mb-3">
                                 {project.features.map((feature, idx) => (
                                     <li key={idx}>{feature}</li>
                                 ))}

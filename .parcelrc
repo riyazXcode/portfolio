@@ -3,6 +3,7 @@
     "transformers": {
         "jsx:*.svg": ["...", "@parcel/transformer-svg-react"],
         "jsx:*": ["..."],
-        "*.{js,mjs,jsx,cjs}": ["@parcel/transformer-js", "@parcel/transformer-react-refresh-wrap"]
+        "*.{js,mjs,jsx,cjs}": ["@parcel/transformer-js", "@parcel/transformer-react-refresh-wrap"],
+        "*.pdf": ["@parcel/transformer-raw"]
     }
 }
