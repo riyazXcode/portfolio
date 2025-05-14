@@ -26,10 +26,10 @@ const Services = () => {
                 <div className="border rounded-2xl shadow-sm p-6">
                     <div className="flex items-center gap-3 mb-4">
                         <div
-                            className="bg-blue-600 text-white font-bold w-10 h-10 flex items-center justify-center rounded-xl ">
+                            className="bg-blue-600 text-white font-bold w-10 h-10 md: flex items-center justify-center rounded-xl px-4">
                             1
                         </div>
-                        <h3 className="text-lg font-semibold">
+                        <h3 className="text-2xl font-semibold">
                             Development of Robust Full-Stack Web Applications
                         </h3>
                     </div>
@@ -50,10 +50,10 @@ const Services = () => {
                 <div className="border rounded-2xl shadow-sm p-6">
                     <div className="flex items-center gap-3 mb-4">
                         <div
-                            className="bg-blue-600 text-white font-bold w-10 h-10 flex items-center justify-center rounded-xl ">
+                            className="bg-blue-600 text-white font-bold w-10 h-10 flex items-center justify-center rounded-xl px-4 ">
                             2
                         </div>
-                        <h3 className="text-lg font-semibold">
+                        <h3 className="text-2xl font-semibold">
                             Deployment, Hosting & Server Management
                         </h3>
                     </div>
