@@ -50,9 +50,6 @@ const Skills = () => {
             <p className="text-gray-700 text-md sm:text-lg max-w-3xl mx-auto mb-2 min-w-fit text-justify">
                 What fuels me isn't just the tech stack — it's the challenge of solving complex problems through thoughtful, elegant solutions. I’m passionate about optimizing workflows, refining APIs, and designing user experiences that are as intuitive as they are impactful.
             </p>
-            {/*<p  className="text-gray-700 text-md sm:text-lg max-w-3xl mx-auto mb-2 min-w-fit">*/}
-            {/*    But beyond the code, what drives me most is the joy of creating. Whether I’m experimenting with a new tool, explaining tech in simple terms, or just tackling a tough bug, I’m always learning and growing. Semicolons? Optional. But a good cup of coffee? Absolutely non-negotiable.*/}
-            {/*</p>*/}
             <p className="text-gray-700 mt-2 text-md sm:text-lg">
                 Visit my <a href="#" className="text-orange-500 font-medium hover:underline">LinkedIn</a> Profile for more details.
             </p>

@@ -41,10 +41,10 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="border rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 p-6"
+                        className="border-gray-200 hover:shadow-md transition border rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 p-6"
                     >
                         <div
-                            className="flex-shrink-0 w-full md:w-1/3 flex items-center justify-center border rounded-xl min-h-[20vw] bg-gray-50">
+                            className="shadow-sm transition flex-shrink-0 w-full md:w-1/3 flex items-center justify-center  rounded-xl min-h-[20vw] bg-gray-50">
                             <img className="rounded-xl" src={project.imageAlt}></img>
                         </div>
 
