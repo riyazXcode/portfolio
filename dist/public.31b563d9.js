@@ -11552,6 +11552,7 @@ var _openSource = require("./components/OpenSource");
 var _openSourceDefault = parcelHelpers.interopDefault(_openSource);
 var _footer = require("./components/Footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
+var _react1 = require("@vercel/analytics/dist/react");
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
@@ -11589,6 +11590,11 @@ const App = ()=>{
                 fileName: "src/App.js",
                 lineNumber: 22,
                 columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react1.Analytics), {}, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 23,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
@@ -11607,7 +11613,7 @@ $RefreshReg$(_c, "App");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./components/Header":"8BCUx","./components/Hero":"6Bk7b","./components/Skills":"6Dlx7","./components/Services":"dqcYh","./components/Projects":"lNfRg","./components/Certifications":"5KjYA","./components/OpenSource":"2MUrb","./components/Footer":"lU1xT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"8BCUx":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","./components/Header":"8BCUx","./components/Hero":"6Bk7b","./components/Skills":"6Dlx7","./components/Services":"dqcYh","./components/Projects":"lNfRg","./components/Certifications":"5KjYA","./components/OpenSource":"2MUrb","./components/Footer":"lU1xT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","@vercel/analytics/dist/react":"j9w5z"}],"8BCUx":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$bb7d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$bb7d.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -27260,7 +27266,194 @@ $RefreshReg$(_c, "Footer");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"hrvwu":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"j9w5z":[function(require,module,exports,__globalThis) {
+"use strict";
+"use client";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all)=>{
+    for(var name2 in all)__defProp(target, name2, {
+        get: all[name2],
+        enumerable: true
+    });
+};
+var __copyProps = (to, from, except, desc)=>{
+    if (from && typeof from === "object" || typeof from === "function") {
+        for (let key of __getOwnPropNames(from))if (!__hasOwnProp.call(to, key) && key !== except) __defProp(to, key, {
+            get: ()=>from[key],
+            enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable
+        });
+    }
+    return to;
+};
+var __toCommonJS = (mod)=>__copyProps(__defProp({}, "__esModule", {
+        value: true
+    }), mod);
+// src/react/index.tsx
+var react_exports = {};
+__export(react_exports, {
+    Analytics: ()=>Analytics,
+    track: ()=>track
+});
+module.exports = __toCommonJS(react_exports);
+var import_react = require("c83f156e38420150");
+// package.json
+var name = "@vercel/analytics";
+var version = "1.5.0";
+// src/queue.ts
+var initQueue = ()=>{
+    if (window.va) return;
+    window.va = function a(...params) {
+        (window.vaq = window.vaq || []).push(params);
+    };
+};
+// src/utils.ts
+function isBrowser() {
+    return typeof window !== "undefined";
+}
+function detectEnvironment() {
+    try {
+        const env = "development";
+        if (env === "development" || env === "test") return "development";
+    } catch (e) {}
+    return "production";
+}
+function setMode(mode = "auto") {
+    if (mode === "auto") {
+        window.vam = detectEnvironment();
+        return;
+    }
+    window.vam = mode;
+}
+function getMode() {
+    const mode = isBrowser() ? window.vam : detectEnvironment();
+    return mode || "production";
+}
+function isProduction() {
+    return getMode() === "production";
+}
+function isDevelopment() {
+    return getMode() === "development";
+}
+function removeKey(key, { [key]: _, ...rest }) {
+    return rest;
+}
+function parseProperties(properties, options) {
+    if (!properties) return void 0;
+    let props = properties;
+    const errorProperties = [];
+    for (const [key, value] of Object.entries(properties))if (typeof value === "object" && value !== null) {
+        if (options.strip) props = removeKey(key, props);
+        else errorProperties.push(key);
+    }
+    if (errorProperties.length > 0 && !options.strip) throw Error(`The following properties are not valid: ${errorProperties.join(", ")}. Only strings, numbers, booleans, and null are allowed.`);
+    return props;
+}
+function getScriptSrc(props) {
+    if (props.scriptSrc) return props.scriptSrc;
+    if (isDevelopment()) return "https://va.vercel-scripts.com/v1/script.debug.js";
+    if (props.basePath) return `${props.basePath}/insights/script.js`;
+    return "/_vercel/insights/script.js";
+}
+// src/generic.ts
+function inject(props = {
+    debug: true
+}) {
+    var _a;
+    if (!isBrowser()) return;
+    setMode(props.mode);
+    initQueue();
+    if (props.beforeSend) (_a = window.va) == null || _a.call(window, "beforeSend", props.beforeSend);
+    const src = getScriptSrc(props);
+    if (document.head.querySelector(`script[src*="${src}"]`)) return;
+    const script = document.createElement("script");
+    script.src = src;
+    script.defer = true;
+    script.dataset.sdkn = name + (props.framework ? `/${props.framework}` : "");
+    script.dataset.sdkv = version;
+    if (props.disableAutoTrack) script.dataset.disableAutoTrack = "1";
+    if (props.endpoint) script.dataset.endpoint = props.endpoint;
+    else if (props.basePath) script.dataset.endpoint = `${props.basePath}/insights`;
+    if (props.dsn) script.dataset.dsn = props.dsn;
+    script.onerror = ()=>{
+        const errorMessage = isDevelopment() ? "Please check if any ad blockers are enabled and try again." : "Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information.";
+        console.log(`[Vercel Web Analytics] Failed to load script from ${src}. ${errorMessage}`);
+    };
+    if (isDevelopment() && props.debug === false) script.dataset.debug = "false";
+    document.head.appendChild(script);
+}
+function track(name2, properties, options) {
+    var _a, _b;
+    if (!isBrowser()) {
+        const msg = "[Vercel Web Analytics] Please import `track` from `@vercel/analytics/server` when using this function in a server environment";
+        if (isProduction()) console.warn(msg);
+        else throw new Error(msg);
+        return;
+    }
+    if (!properties) {
+        (_a = window.va) == null || _a.call(window, "event", {
+            name: name2,
+            options
+        });
+        return;
+    }
+    try {
+        const props = parseProperties(properties, {
+            strip: isProduction()
+        });
+        (_b = window.va) == null || _b.call(window, "event", {
+            name: name2,
+            data: props,
+            options
+        });
+    } catch (err) {
+        if (err instanceof Error && isDevelopment()) console.error(err);
+    }
+}
+function pageview({ route, path }) {
+    var _a;
+    (_a = window.va) == null || _a.call(window, "pageview", {
+        route,
+        path
+    });
+}
+// src/react/utils.ts
+function getBasePath() {
+    return void 0;
+}
+// src/react/index.tsx
+function Analytics(props) {
+    (0, import_react.useEffect)(()=>{
+        var _a;
+        if (props.beforeSend) (_a = window.va) == null || _a.call(window, "beforeSend", props.beforeSend);
+    }, [
+        props.beforeSend
+    ]);
+    (0, import_react.useEffect)(()=>{
+        inject({
+            framework: props.framework || "react",
+            basePath: props.basePath ?? getBasePath(),
+            ...props.route !== void 0 && {
+                disableAutoTrack: true
+            },
+            ...props
+        });
+    }, []);
+    (0, import_react.useEffect)(()=>{
+        if (props.route && props.path) pageview({
+            route: props.route,
+            path: props.path
+        });
+    }, [
+        props.route,
+        props.path
+    ]);
+    return null;
+}
+
+},{"c83f156e38420150":"jMk1U"}],"hrvwu":[function(require,module,exports,__globalThis) {
 'use strict';
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') return;

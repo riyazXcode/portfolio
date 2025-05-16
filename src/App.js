@@ -7,7 +7,7 @@ import Projects from "./components/Projects";
 import Certifications from "./components/Certifications";
 import OpenSource from "./components/OpenSource";
 import Footer from "./components/Footer";
-
+import { Analytics } from '@vercel/analytics/dist/react';
 
 const App = () => {
     return (
@@ -20,6 +20,7 @@ const App = () => {
             {/*<OpenSource/>*/}
             <Certifications/>
             <Footer/>
+            <Analytics/>
         </div>
     )
 }
